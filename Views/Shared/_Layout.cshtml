@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ArcaneNotes</title>
+    <!-- Global font (loaded once for both themes) -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Inline theme loader -->
+    <script>
+        (function () {
+            let theme = localStorage.getItem('theme');
+            if (!theme) {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            // ✅ use absolute path, not ~/
+            document.write(`<link id="themeStylesheet" rel="stylesheet" href="/css/${theme}-theme.css">`);
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
+</head>
+
+
+<body>
+    
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+ 
+
+
+    <!-- Vendor scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Global app logic (must load BEFORE theme script) -->
+    <script src="~/js/app.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <!-- Theme detection & toggle -->
+    <script>
+        (function () {
+            const themeLink = document.getElementById('themeStylesheet');
+
+            let theme = localStorage.getItem('theme');
+            if (!theme) {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                theme = prefersDark ? 'dark' : 'light';
+            }
+
+            setTheme(theme);
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                if (!localStorage.getItem('theme')) {
+                    setTheme(e.matches ? 'dark' : 'light');
+                }
+            });
+
+            function setTheme(mode) {
+                themeLink.href = `/css/${mode}-theme.css`;
+                document.documentElement.dataset.theme = mode;
+            }
+
+            window.toggleTheme = function () {
+                const newTheme = (document.documentElement.dataset.theme === 'dark') ? 'light' : 'dark';
+                localStorage.setItem('theme', newTheme);
+                setTheme(newTheme);
+            };
+        })();
+    </script>
+</body>
+</html>

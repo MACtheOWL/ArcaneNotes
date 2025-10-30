@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "GM Form";
+}
+
+<div class="d-flex flex-column align-items-center justify-content-center" style="min-height:80vh;">
+    <div class="col-10 col-md-8 col-lg-6 text-center">
+        <h1 class="mb-4">GM Session Notes</h1>
+
+        <div class="mb-4 text-start">
+            <label class="form-label fw-bold">Title</label>
+            <input type="text" id="noteTitle" class="form-control mb-3" placeholder="Enter a session title (e.g., The Crimson Voyage)">
+        </div>
+
+
+        <!-- GM Name -->
+        <div class="mb-4 text-start">
+            <label class="form-label fw-bold">GM Name</label>
+            <input type="text" id="gmName" class="form-control" placeholder="Enter your name">
+        </div>
+
+        <!-- Form container -->
+        <div id="formContainer" class="mb-4"></div>
+
+        <!-- Add field buttons -->
+        <div class="d-flex flex-wrap gap-3 justify-content-center">
+            <button class="btn btn-outline-primary btn-lg" onclick="App.addNpc(true)">+ NPC</button>
+            <button class="btn btn-outline-primary btn-lg" onclick="App.addLocation()">+ Location</button>
+            <button class="btn btn-outline-primary btn-lg" onclick="App.addTreasure()">+ Treasure</button>
+            <button class="btn btn-outline-primary btn-lg" onclick="App.addPlot()">+ Plot Hook</button>
+            <button class="btn btn-outline-primary btn-lg" onclick="App.addExtra()">+ Extra Info</button>
+        </div>
+
+
+        <!-- Error Field -->
+
+        <!-- Make it Arcane! -->
+        <button class="btn btn-gm btn-lg mt-5" onclick="App.makeItArcane('GM')">Make it Arcane</button>
+
+        <!-- Arcane popup -->
+        <div id="arcanePopup" class="arcane-popup">
+            <div class="popup-content">
+                <p id="popupMessage">⚠️ Add at least one note before making it arcane!</p>
+                <button id="popupClose" class="btn btn-gm mt-3">OK</button>
+            </div>
+        </div>
+
+    </div>
+</div>

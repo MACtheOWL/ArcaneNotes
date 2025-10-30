@@ -1,0 +1,279 @@
+
+
+body {
+    background-color: #fdfdfd;
+    color: #222;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1, h2, h5 {
+    color: #222;
+}
+
+.card {
+    background-color: #fff !important;
+    border: 1px solid #ccc !important;
+    color: #222;
+}
+
+input, textarea {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 1px solid #ccc !important;
+}
+
+.navbar {
+    background-color: #f8f9fa !important;
+    border-bottom: 2px solid #007bff !important;
+}
+
+html, body {
+    transition: background-color 0.6s, color 0.6s;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* =============================== */
+/*          BUTTONS                */
+/* =============================== */
+
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid #cc0000;
+    background-color: #fff;
+    color: #cc0000;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+}
+
+    .btn:hover {
+        background-color: #cc0000;
+        color: #fff;
+
+        transform: scale(1.05);
+    }
+
+/* Special GM and Player Buttons */
+.btn-gm {
+    background-color: #fff;
+    border: 2px solid #cc0000;
+    color: #cc0000;
+}
+
+    .btn-gm:hover {
+        background-color: #cc0000;
+        color: #fff;
+
+        transform: scale(1.07);
+    }
+
+.btn-player {
+    background-color: #fff;
+    border: 2px solid #007bff;
+    color: #007bff;
+}
+
+
+
+    .btn-player:hover {
+        background-color: #007bff;
+        color: #fff;
+
+        transform: scale(1.07);
+    }
+
+/* Success / Secondary Buttons */
+.btn-success {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+    color: #007bff;
+}
+
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+    .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+/* Theme toggle button */
+.btn-outline-secondary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+    .btn-outline-secondary:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+.note-remove {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    padding: 2px 6px;
+    font-size: 0.9rem;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+/* === Arcane Popup === */
+.arcane-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.popup-content {
+    background: #1a1a1a;
+    color: #fff;
+    border: 2px solid #cc0000;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+    padding: 30px 40px;
+    max-width: 400px;
+    text-align: center;
+    font-size: 1.2rem;
+    animation: popScale 0.25s ease forwards;
+}
+
+/* Light mode overrides */
+[data-theme="light"] .popup-content {
+    background: #fff;
+    color: #111;
+    border: 2px solid #007bff;
+    box-shadow: 0 0 25px rgba(0, 102, 255, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popScale {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+footer {
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.85rem;
+    color: #aaa;
+    opacity: 0.6;
+}
+
+
+/* === Theme Toggle Button === */
+.btn-theme-toggle {
+    background-color: transparent;
+    color: #aaa;
+    border: 2px solid #00b300;
+    padding: 12px 28px;
+
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-in-out;
+
+}
+
+    .btn-theme-toggle:hover {
+        color: #fff;
+        background-color: #00b300;
+        border-color: #00b300;
+
+        transform: scale(1.05);
+    }
+
+    .btn-theme-toggle:active {
+        transform: scale(0.98);
+    }
+
+
+
+
+.image-preview {
+    border: 1px dashed #555;
+    border-radius: 8px;
+    padding: 8px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-img {
+    max-width: 100%;
+    max-height: 150px;
+    border-radius: 8px;
+}
+
+.card.drag-hover {
+    border-color: #cd0a00ff !important;
+    box-shadow: 0 0 15px rgba(211, 0, 0, 0.47);
+}
+
+.card.drag-hover {
+    border: 2px dashed #00ff00 !important;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.btn-image {
+    padding: 2px 6px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    line-height: 1;
+}
+.note-tools {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 4px;
+    z-index: 10;
+}
+
+    .note-tools .btn {
+        padding: 2px 4px; /* smaller padding = same height */
+        font-size: 0.8rem;
+        border-radius: 6px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* centers + and x perfectly */
+    }
