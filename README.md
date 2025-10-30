@@ -1,0 +1,2 @@
+# ArcaneNotes
+Note taking application 
